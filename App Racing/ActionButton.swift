@@ -26,7 +26,7 @@ class ActionButton: UIButton {
         switch(item) {
         case 0:
             // up
-            self.setImage(UIImage(named: "img/up.jpg"), forState: UIControlState.Normal)
+            self.setImage(UIImage(named: "img/up.png"), forState: UIControlState.Normal)
             break
             
         case 1:
@@ -35,6 +35,10 @@ class ActionButton: UIButton {
             
         case 2:
             self.setImage(UIImage(named: "img/right.png"), forState: UIControlState.Normal)
+            break
+            
+        case 3:
+            self.setImage(UIImage(named: "img/remove.png"), forState: UIControlState.Normal)
             break
         default:
             break
@@ -50,6 +54,8 @@ class ActionButton: UIButton {
             return "turnLeft();"
         case 2:
             return "turnRight();"
+        case 3:
+            return "remove"
         default:
             break
         }

@@ -15,8 +15,55 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Racing Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVS-mT-Ry1">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="xN8-at-HWL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="xN8-at-HWL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="xN8-at-HWL"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RVS-mT-Ry1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6GI-g7-5xE"/>
+                            <constraint firstItem="RVS-mT-Ry1" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="233" id="cN1-gL-eML"/>
+                            <constraint firstItem="RVS-mT-Ry1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wfT-xx-CqW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="RVS-mT-Ry1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6GI-g7-5xE"/>
+                                <exclude reference="cN1-gL-eML"/>
+                                <exclude reference="wfT-xx-CqW"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="RVS-mT-Ry1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6GI-g7-5xE"/>
+                                <include reference="cN1-gL-eML"/>
+                                <include reference="wfT-xx-CqW"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

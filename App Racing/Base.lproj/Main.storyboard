@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wVj-6z-GvD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -60,13 +61,13 @@
                                 <exclude reference="vnQ-GE-Ytv"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="bBY-UE-WQH"/>
+                                <exclude reference="c0C-W7-BoH"/>
+                                <exclude reference="gy9-Yn-BWU"/>
                                 <exclude reference="2ul-wN-CoK"/>
                                 <exclude reference="XlB-3R-UxQ"/>
                                 <exclude reference="d98-ci-vIo"/>
                                 <exclude reference="hK6-e6-kMq"/>
-                                <exclude reference="bBY-UE-WQH"/>
-                                <exclude reference="c0C-W7-BoH"/>
-                                <exclude reference="gy9-Yn-BWU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -75,13 +76,13 @@
                                 <include reference="vnQ-GE-Ytv"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="bBY-UE-WQH"/>
+                                <include reference="c0C-W7-BoH"/>
+                                <include reference="gy9-Yn-BWU"/>
                                 <include reference="2ul-wN-CoK"/>
                                 <include reference="XlB-3R-UxQ"/>
                                 <include reference="d98-ci-vIo"/>
                                 <include reference="hK6-e6-kMq"/>
-                                <include reference="bBY-UE-WQH"/>
-                                <include reference="c0C-W7-BoH"/>
-                                <include reference="gy9-Yn-BWU"/>
                             </mask>
                         </variation>
                     </view>

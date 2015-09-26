@@ -39,12 +39,16 @@ class CodeViewController: UIViewController, UITableViewDelegate, UICollectionVie
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func buttonClicked(sender: AnyObject?) {
         let button = sender as! ActionButton
-        self.codeLines.addObject(button.getCommand())
+        if (button.getCommand() == "remove") {
+            self.codeLines.removeAllObjects()
+        } else {
+            self.codeLines.addObject(button.getCommand())
+        }
         self.tableView.reloadData()
     }
     
