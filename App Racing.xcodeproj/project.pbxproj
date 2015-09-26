@@ -26,6 +26,7 @@
 		D6F57D0E1BB6A38500D51749 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F57D0D1BB6A38500D51749 /* MapView.swift */; settings = {ASSET_TAGS = (); }; };
 		D6F57D101BB6BAC600D51749 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F57D0F1BB6BAC600D51749 /* CarView.swift */; settings = {ASSET_TAGS = (); }; };
 		D6F57D121BB6C21400D51749 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F57D111BB6C21400D51749 /* RunViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D6F57D161BB6C86C00D51749 /* BasicMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F57D151BB6C86C00D51749 /* BasicMap.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		D6F57D0D1BB6A38500D51749 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D6F57D0F1BB6BAC600D51749 /* CarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
 		D6F57D111BB6C21400D51749 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
+		D6F57D151BB6C86C00D51749 /* BasicMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		D6F57CC91BB66BD200D51749 /* App Racing */ = {
 			isa = PBXGroup;
 			children = (
+				D6F57D131BB6C81200D51749 /* Maps */,
 				D6F57D031BB678EB00D51749 /* up.jpg */,
 				D6F57D091BB6830800D51749 /* img */,
 				D6F57CFB1BB6705400D51749 /* image1.jpg */,
@@ -159,6 +162,14 @@
 				D6F57CEF1BB66BD200D51749 /* Info.plist */,
 			);
 			path = "App RacingUITests";
+			sourceTree = "<group>";
+		};
+		D6F57D131BB6C81200D51749 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				D6F57D151BB6C86C00D51749 /* BasicMap.swift */,
+			);
+			name = Maps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 				TargetAttributes = {
 					D6F57CC61BB66BD200D51749 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = RBK378AHF3;
 					};
 					D6F57CDD1BB66BD200D51749 = {
 						CreatedOnToolsVersion = 7.0;
@@ -298,6 +310,7 @@
 				D6F57D061BB67CBF00D51749 /* CodeTableViewCell.swift in Sources */,
 				D6F57D0E1BB6A38500D51749 /* MapView.swift in Sources */,
 				D6F57CCD1BB66BD200D51749 /* ViewController.swift in Sources */,
+				D6F57D161BB6C86C00D51749 /* BasicMap.swift in Sources */,
 				D6F57D001BB6747D00D51749 /* CodeViewController.swift in Sources */,
 				D6F57D121BB6C21400D51749 /* RunViewController.swift in Sources */,
 				D6F57CD31BB66BD200D51749 /* App_Racing.xcdatamodeld in Sources */,
@@ -444,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "App Racing/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bangdao.App-Racing";
@@ -455,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "App Racing/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bangdao.App-Racing";
@@ -529,6 +544,7 @@
 				D6F57CF41BB66BD200D51749 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6F57CF51BB66BD200D51749 /* Build configuration list for PBXNativeTarget "App RacingTests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +553,7 @@
 				D6F57CF71BB66BD200D51749 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6F57CF81BB66BD200D51749 /* Build configuration list for PBXNativeTarget "App RacingUITests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +562,7 @@
 				D6F57CFA1BB66BD200D51749 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

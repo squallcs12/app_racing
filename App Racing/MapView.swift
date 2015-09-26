@@ -12,8 +12,10 @@ class MapView: UIView {
 
     var pointEdge = 8.0
     var centerX:Double = 160.0;
-    var centerY:Double = 280.0;
+    var centerY:Double = 220.0;
     let car = CarView()
+    
+    var map: Map? = nil
     
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -25,7 +27,11 @@ class MapView: UIView {
     
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        centerX = centerX - pointEdge/2
+        centerY = centerY - pointEdge/2
+        super.init(coder: aDecoder)
+        self.addSubview(car)
+
     }
     
     override init(frame: CGRect) {
@@ -44,6 +50,13 @@ class MapView: UIView {
         return point
     }
     
+    
+    func drawMap(points: Array<Array<Int>>) {
+        for var point in points {
+            self.drawPoint(point[0], y: point[1])
+        }
+    }
+    
     func drawCar(x: Int, y: Int) -> UIView {
         let X = Double(x) * pointEdge + centerX - 1.5 * pointEdge
         let Y = Double(y) * pointEdge + centerY - 1.5 * pointEdge
@@ -52,7 +65,7 @@ class MapView: UIView {
         return car
     }
     
-    func moveCar(x: Int, y: Int) {
+    func moveCar(x: Int, y: Int, completion: ((Bool) -> Void)?) {
         
         let X = Double(x) * pointEdge + centerX + 0.5 * pointEdge
         let Y = Double(y) * pointEdge + centerY + 0.5 * pointEdge
@@ -64,10 +77,48 @@ class MapView: UIView {
             animations: {
                 self.car.center = newCenter
             },
-            completion: {
+            completion: completion
+        )
+    }
+    
+    func initMap(level: Int) {
+        let map = Map.getMap(level)
+        self.drawMap(map.map)
+        self.drawCar(map.start_x, y: map.start_y)
+        self.map = map
+    }
+    
+    func doStep(commands: NSMutableArray, index: Int, completion: ((Int) -> Void), onRunning: ((Int) -> (Void))) {
+        onRunning(index)
+        if map?.solutions.count <= index {
+            completion(-1)
+            return
+        }
+        if commands.count <= index {
+            completion(-2)
+            return
+        }
+        let solution = map?.solutions[index]
+        let command = commands.objectAtIndex(index) as! String
+        if command == solution?.command {
+            let destination = solution?.destination
+            let x = (destination?[0])!
+            let y = (destination?[1])!
+            self.moveCar(x, y: y) {
                 finished in
-                return
-        })
+                if (x == self.map?.end_x && y == self.map?.end_y) {
+                    completion(1)
+                    return
+                }
+                self.doStep(commands, index: index + 1, completion: completion, onRunning: onRunning)
+            }
+        } else {
+            completion(0)
+        }
+    }
+    
+    func testSolutions(commands: NSMutableArray, completion: ((Int) -> Void), onRunning: ((Int) -> (Void))) {
+        doStep(commands, index: 0, completion: completion, onRunning: onRunning)
     }
 
 }

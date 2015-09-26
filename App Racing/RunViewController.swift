@@ -10,56 +10,56 @@ import UIKit
 
 class RunViewController: UIViewController, UIScrollViewDelegate {
     
-    var mapView:MapView = MapView()
+    @IBOutlet weak var mapView: MapView!
+    @IBOutlet weak var labelView: UILabel!
+    
+    var commands = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        self.mapView.frame = self.view.frame
-        self.view.addSubview(mapView)
-        
-        self.drawMap([
-            [0, -18],
-            [0, -17],
-            [0, -16],
-            [0, -15],
-            [0, -14],
-            [0, -13],
-            [0, -12],
-            [0, -11],
-            [0, -10],
-            [0, -9],
-            [0, -8],
-            [0, -7],
-            [0, -6],
-            [0, -5],
-            [0, -4],
-            [0, -3],
-            [0, -2],
-            [0, -1],
-            [0, 0],
-            [0, 1],
-            [0, 2],
-            [0, 3],
-            [0, 4],
-            [0, 5],
-            [0, 6],
-            [0, 7],
-            [0, 8],
-            [0, 9],
-            [0, 10],
-            [0, 11],
-            [0, 12],
-            [0, 13],
-            [0, 14],
-            [0, 15],
-            [0, 16],
-            [0, 17],
-            [0, 18],
-            ])
-        self.mapView.drawCar(0, y: 18)
-        self.mapView.moveCar(0, y: -18)
+        self.mapView.initMap(3)
+        self.mapView.testSolutions(self.commands,
+            completion: {
+            number in
+                var title:String = "title"
+                var message:String = "message"
+                switch (number) {
+                case -2:
+                    title = "Error"
+                    message = "Not enough commands!"
+                    break
+                case -1:
+                    title = "Error"
+                    message = "Not enough commands!"
+                    break
+                case 1:
+                    title = "Congratslation!"
+                    message = "Your code works!"
+                    break
+                case 0:
+                    title = "Error"
+                    message = "Wrong code!"
+                    break
+                default:
+                    break
+                    
+                }
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+                
+                let okAction = UIAlertAction(title: "Ok", style: .Cancel) { (action:UIAlertAction!) in
+                    
+                }
+                alert.addAction(okAction)
+                self.presentViewController(alert, animated: true, completion:nil)
+            },
+            onRunning: {
+            index in
+                let command = self.commands.objectAtIndex(index) as! String
+                print(command)
+                self.labelView.text = command
+                return
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,13 +67,9 @@ class RunViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func drawMap(points: NSArray) {
-        for var point in points {
-            point = point as! NSArray
-            let x = point.objectAtIndex(0) as! Int
-            let y = point.objectAtIndex(1) as! Int
-            self.mapView.drawPoint(x, y: y)
-        }
+    func setSolutions(commands: NSMutableArray) {
+        self.commands = commands
     }
+    
 }
 

@@ -58,7 +58,12 @@ class CodeViewController: UIViewController, UITableViewDelegate, UICollectionVie
         return cell
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "executeCode") {
+            let runController = segue.destinationViewController as! RunViewController
+            runController.setSolutions(self.codeLines)
+        }
+    }
 
     /*
     // MARK: - Navigation
