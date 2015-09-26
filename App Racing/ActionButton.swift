@@ -13,12 +13,12 @@ class ActionButton: UIButton {
     var number: Int? = nil;
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.backgroundColor = UIColor.whiteColor()
         self.addTarget(CodeViewController.instance, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
     }
     

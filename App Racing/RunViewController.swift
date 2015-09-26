@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
-
+class RunViewController: UIViewController, UIScrollViewDelegate {
+    
     var mapView:MapView = MapView()
     
     override func viewDidLoad() {
@@ -57,11 +57,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             [0, 16],
             [0, 17],
             [0, 18],
-        ])
+            ])
         self.mapView.drawCar(0, y: 18)
         self.mapView.moveCar(0, y: -18)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

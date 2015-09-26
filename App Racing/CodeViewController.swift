@@ -12,7 +12,6 @@ class CodeViewController: UIViewController, UITableViewDelegate, UICollectionVie
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var button: UIButton!
     
     var codeLines = NSMutableArray()
     
@@ -55,7 +54,7 @@ class CodeViewController: UIViewController, UITableViewDelegate, UICollectionVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("codeCell", forIndexPath: indexPath)
-        cell.textLabel!.text = self.codeLines.objectAtIndex(indexPath.row) as! String
+        cell.textLabel!.text = self.codeLines.objectAtIndex(indexPath.row) as? String
         return cell
     }
     
