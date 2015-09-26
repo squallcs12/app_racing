@@ -30,15 +30,19 @@ class MapView: UIView {
         centerX = centerX - pointEdge/2
         centerY = centerY - pointEdge/2
         super.init(coder: aDecoder)
-        self.addSubview(car)
-
+        self.afterInit()
     }
     
     override init(frame: CGRect) {
         centerX = centerX - pointEdge/2
         centerY = centerY - pointEdge/2
         super.init(frame: frame)
+        self.afterInit()
+    }
+    
+    func afterInit() {
         self.addSubview(car)
+        self.backgroundColor = UIColor(patternImage: UIImage(named: "img/map-background.png")!)
     }
     
     func drawPoint(x: Int, y: Int) -> UIView {
@@ -82,6 +86,12 @@ class MapView: UIView {
     }
     
     func initMap(level: Int) {
+        for (index, view) in self.subviews.enumerate() {
+            if index > 0 {
+                view.removeFromSuperview()
+            }
+        }
+        
         let map = Map.getMap(level)
         self.drawMap(map.map)
         self.drawCar(map.start_x, y: map.start_y)
@@ -89,7 +99,6 @@ class MapView: UIView {
     }
     
     func doStep(commands: NSMutableArray, index: Int, completion: ((Int) -> Void), onRunning: ((Int) -> (Void))) {
-        onRunning(index)
         if map?.solutions.count <= index {
             completion(-1)
             return
@@ -98,6 +107,7 @@ class MapView: UIView {
             completion(-2)
             return
         }
+        onRunning(index)
         let solution = map?.solutions[index]
         let command = commands.objectAtIndex(index) as! String
         if command == solution?.command {

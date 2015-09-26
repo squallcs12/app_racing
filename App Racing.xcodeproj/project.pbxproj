@@ -27,6 +27,7 @@
 		D6F57D101BB6BAC600D51749 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F57D0F1BB6BAC600D51749 /* CarView.swift */; settings = {ASSET_TAGS = (); }; };
 		D6F57D121BB6C21400D51749 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F57D111BB6C21400D51749 /* RunViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D6F57D161BB6C86C00D51749 /* BasicMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F57D151BB6C86C00D51749 /* BasicMap.swift */; settings = {ASSET_TAGS = (); }; };
+		D6FABD191BB707460058AD62 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FABD181BB707460058AD62 /* AppData.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		D6F57D0F1BB6BAC600D51749 /* CarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
 		D6F57D111BB6C21400D51749 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
 		D6F57D151BB6C86C00D51749 /* BasicMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMap.swift; sourceTree = "<group>"; };
+		D6FABD181BB707460058AD62 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				D6F57D0D1BB6A38500D51749 /* MapView.swift */,
 				D6F57D0F1BB6BAC600D51749 /* CarView.swift */,
 				D6F57D111BB6C21400D51749 /* RunViewController.swift */,
+				D6FABD181BB707460058AD62 /* AppData.swift */,
 			);
 			path = "App Racing";
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				D6F57D001BB6747D00D51749 /* CodeViewController.swift in Sources */,
 				D6F57D121BB6C21400D51749 /* RunViewController.swift in Sources */,
 				D6F57CD31BB66BD200D51749 /* App_Racing.xcdatamodeld in Sources */,
+				D6FABD191BB707460058AD62 /* AppData.swift in Sources */,
 				D6F57CCB1BB66BD200D51749 /* AppDelegate.swift in Sources */,
 				D6F57D021BB6764D00D51749 /* ActionCollectionViewCell.swift in Sources */,
 				D6F57D0C1BB684E600D51749 /* ActionButton.swift in Sources */,

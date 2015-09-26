@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wVj-6z-GvD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Road-->
@@ -19,34 +20,68 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruV-BF-Xyq" customClass="MapView" customModule="App_Racing" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnQ-GE-Ytv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="d9a-q6-a9J"/>
+                                </constraints>
+                                <state key="normal" title="Start over">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="d9a-q6-a9J"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="d9a-q6-a9J"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="startOver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="276-Mx-4H2"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ruV-BF-Xyq" secondAttribute="trailing" id="0d0-QU-Obc"/>
-                            <constraint firstItem="ruV-BF-Xyq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Kcp-53-nIj"/>
-                            <constraint firstItem="ruV-BF-Xyq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TTr-wy-4Ra"/>
-                            <constraint firstItem="ruV-BF-Xyq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZhK-VD-tq8"/>
+                            <constraint firstItem="ruV-BF-Xyq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="2ul-wN-CoK"/>
+                            <constraint firstItem="ruV-BF-Xyq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XlB-3R-UxQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vnQ-GE-Ytv" secondAttribute="bottom" constant="8" symbolic="YES" id="bBY-UE-WQH"/>
+                            <constraint firstItem="vnQ-GE-Ytv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="c0C-W7-BoH"/>
+                            <constraint firstAttribute="trailing" secondItem="ruV-BF-Xyq" secondAttribute="trailing" id="d98-ci-vIo"/>
+                            <constraint firstItem="vnQ-GE-Ytv" firstAttribute="top" secondItem="ruV-BF-Xyq" secondAttribute="bottom" constant="28" id="gy9-Yn-BWU"/>
+                            <constraint firstItem="ruV-BF-Xyq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hK6-e6-kMq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ruV-BF-Xyq"/>
+                                <exclude reference="vnQ-GE-Ytv"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0d0-QU-Obc"/>
-                                <exclude reference="Kcp-53-nIj"/>
-                                <exclude reference="TTr-wy-4Ra"/>
-                                <exclude reference="ZhK-VD-tq8"/>
+                                <exclude reference="2ul-wN-CoK"/>
+                                <exclude reference="XlB-3R-UxQ"/>
+                                <exclude reference="d98-ci-vIo"/>
+                                <exclude reference="hK6-e6-kMq"/>
+                                <exclude reference="bBY-UE-WQH"/>
+                                <exclude reference="c0C-W7-BoH"/>
+                                <exclude reference="gy9-Yn-BWU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ruV-BF-Xyq"/>
+                                <include reference="vnQ-GE-Ytv"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0d0-QU-Obc"/>
-                                <include reference="Kcp-53-nIj"/>
-                                <include reference="TTr-wy-4Ra"/>
-                                <include reference="ZhK-VD-tq8"/>
+                                <include reference="2ul-wN-CoK"/>
+                                <include reference="XlB-3R-UxQ"/>
+                                <include reference="d98-ci-vIo"/>
+                                <include reference="hK6-e6-kMq"/>
+                                <include reference="bBY-UE-WQH"/>
+                                <include reference="c0C-W7-BoH"/>
+                                <include reference="gy9-Yn-BWU"/>
                             </mask>
                         </variation>
                     </view>

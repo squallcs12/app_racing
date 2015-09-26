@@ -18,29 +18,42 @@ class RunViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.mapView.initMap(3)
+        let level = AppData().getLevel()
+        self.mapView.initMap(level)
         self.mapView.testSolutions(self.commands,
             completion: {
             number in
                 var title:String = "title"
                 var message:String = "message"
+                
                 switch (number) {
                 case -2:
                     title = "Error"
                     message = "Not enough commands!"
                     break
+                    
                 case -1:
                     title = "Error"
                     message = "Not enough commands!"
                     break
+                    
                 case 1:
                     title = "Congratslation!"
                     message = "Your code works!"
+                    print(level)
+                    if level < 4 {
+                        AppData().saveLevel(level + 1)
+                    } else {
+                        message = "You finished the game"
+                    }
+                    
                     break
+                    
                 case 0:
                     title = "Error"
                     message = "Wrong code!"
                     break
+                    
                 default:
                     break
                     
@@ -48,7 +61,11 @@ class RunViewController: UIViewController, UIScrollViewDelegate {
                 let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
                 
                 let okAction = UIAlertAction(title: "Ok", style: .Cancel) { (action:UIAlertAction!) in
-                    
+                    if level < 4 {
+                        let viewController = self.navigationController?.viewControllers[0] as! ViewController
+                        viewController.redrawMap()
+                        self.navigationController?.popToRootViewControllerAnimated(true)
+                    }
                 }
                 alert.addAction(okAction)
                 self.presentViewController(alert, animated: true, completion:nil)
@@ -56,9 +73,7 @@ class RunViewController: UIViewController, UIScrollViewDelegate {
             onRunning: {
             index in
                 let command = self.commands.objectAtIndex(index) as! String
-                print(command)
                 self.labelView.text = command
-                return
         })
     }
     

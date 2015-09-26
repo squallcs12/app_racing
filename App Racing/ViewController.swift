@@ -14,9 +14,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib3
-
-        self.mapView.initMap(3)
+        self.mapView.initMap(AppData().getLevel())
 
     }
 
@@ -25,5 +25,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func redrawMap() {
+        self.mapView.initMap(AppData().getLevel())
+    }
+    @IBAction func startOver(sender: AnyObject) {
+        AppData().saveLevel(1)
+        self.redrawMap()
+    }
 }
 

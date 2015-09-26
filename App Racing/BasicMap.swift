@@ -327,14 +327,14 @@ struct BasicMap {
         [-2, -18],
         [-3, -18],
         [-4, -18],
-        ], start: [-5, -18], end: [-4, -18],
+        ], start: [-4, -18], end: [-5, -18],
         solutions: [
             Solution(command: "goStraight();", destination: [5, -18]),
-            Solution(command: "turnLeft();", destination: [5, -17]),
+            Solution(command: "turnRight();", destination: [5, -17]),
             Solution(command: "goStraight();", destination: [5, 18]),
             Solution(command: "turnRight();", destination: [4, 18]),
             Solution(command: "goStraight();", destination: [-5, 18]),
-            Solution(command: "turnLeft();", destination: [-5, 17]),
+            Solution(command: "turnRight();", destination: [-5, 17]),
             Solution(command: "goStraight();", destination: [-5, -18]),
         ])
 }
