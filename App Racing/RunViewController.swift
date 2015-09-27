@@ -73,7 +73,7 @@ class RunViewController: UIViewController, UIScrollViewDelegate {
             onRunning: {
             index in
                 let command = self.commands.objectAtIndex(index) as! String
-                self.labelView.text = command
+                self.labelView.text = String(index+1) + ". " + command
         })
     }
     

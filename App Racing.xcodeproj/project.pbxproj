@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D65908551BB77CF000E8821D /* Maps in Resources */ = {isa = PBXBuildFile; fileRef = D65908541BB77CF000E8821D /* Maps */; settings = {ASSET_TAGS = (); }; };
 		D6F57CCB1BB66BD200D51749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F57CCA1BB66BD200D51749 /* AppDelegate.swift */; };
 		D6F57CCD1BB66BD200D51749 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F57CCC1BB66BD200D51749 /* ViewController.swift */; };
 		D6F57CD01BB66BD200D51749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6F57CCE1BB66BD200D51749 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D65908541BB77CF000E8821D /* Maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Maps; sourceTree = "<group>"; };
 		D6F57CC71BB66BD200D51749 /* App Racing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Racing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F57CCA1BB66BD200D51749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6F57CCC1BB66BD200D51749 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		D6F57CC91BB66BD200D51749 /* App Racing */ = {
 			isa = PBXGroup;
 			children = (
+				D65908541BB77CF000E8821D /* Maps */,
 				D6F57D131BB6C81200D51749 /* Maps */,
 				D6F57D091BB6830800D51749 /* img */,
 				D6F57CFB1BB6705400D51749 /* image1.jpg */,
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6F57CD81BB66BD200D51749 /* LaunchScreen.storyboard in Resources */,
+				D65908551BB77CF000E8821D /* Maps in Resources */,
 				D6F57CFE1BB6729B00D51749 /* image2.jpg in Resources */,
 				D6F57D0A1BB6830800D51749 /* img in Resources */,
 				D6F57CFC1BB6705400D51749 /* image1.jpg in Resources */,

@@ -24,6 +24,7 @@ class CodeViewController: UIViewController, UITableViewDelegate, UICollectionVie
         CodeViewController.instance = self
         self.collectionView.registerClass(ActionCollectionViewCell.self, forCellWithReuseIdentifier: "actionCell")
         self.tableView.registerClass(CodeTableViewCell.self, forCellReuseIdentifier: "codeCell")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +51,11 @@ class CodeViewController: UIViewController, UITableViewDelegate, UICollectionVie
             self.codeLines.addObject(button.getCommand())
         }
         self.tableView.reloadData()
+        if self.codeLines.count > 0 {
+            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.codeLines.count - 1, inSection: 0),
+                atScrollPosition: UITableViewScrollPosition.Bottom,
+                animated: true)
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +64,7 @@ class CodeViewController: UIViewController, UITableViewDelegate, UICollectionVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("codeCell", forIndexPath: indexPath)
-        cell.textLabel!.text = self.codeLines.objectAtIndex(indexPath.row) as? String
+        cell.textLabel!.text = String(indexPath.row + 1) + ". " + (self.codeLines.objectAtIndex(indexPath.row) as? String)!
         return cell
     }
     
