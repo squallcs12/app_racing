@@ -17,7 +17,6 @@ class AppData {
     }
     
     func getLevel() -> Int {
-        return 5
         var level = AppData().read("level")
         if level == nil || level == 0 {
             level = 1

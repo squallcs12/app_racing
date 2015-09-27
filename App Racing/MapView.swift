@@ -86,15 +86,15 @@ class MapView: UIView {
     }
     
     func initMap(level: Int) {
-//        for (index, view) in self.subviews.enumerate() {
-//            if index > 0 {
-//                view.removeFromSuperview()
-//            }
-//        }
+        for (index, view) in self.subviews.enumerate() {
+            if index > 0 {
+                view.removeFromSuperview()
+            }
+        }
         
         let map = Map.getMap(level)
         self.drawMap(map.map)
-//        self.backgroundColor = UIColor(patternImage: UIImage(named: map.mapImagePath)!)
+        self.backgroundColor = UIColor(patternImage: UIImage(named: map.mapImagePath)!)
         self.drawCar(map.start_x, y: map.start_y)
         self.map = map
     }
